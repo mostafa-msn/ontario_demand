@@ -20,7 +20,7 @@ app.conf.beat_schedule = {
 
     'fetch-ontario-demand': {
         'task': 'demand.tasks.fetch_ontario_csv',
-        'schedule': crontab(minute='*/2'),
+        'schedule': crontab(hour=7, minute=0),
         'args': tuple()
     },
 
