@@ -6,7 +6,7 @@ class DemandReportSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DemandReport
-        fields = ('date', 'hour', 'market_demand', 'ontario_demand')
+        fields = ('id', 'date', 'hour', 'market_demand', 'ontario_demand')
 
 
 class CreateDemandReportSerializer(serializers.Serializer):
