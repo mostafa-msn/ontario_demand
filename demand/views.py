@@ -1,7 +1,8 @@
 from rest_framework import generics, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from .models import DemandReport
 from .serializers import DemandReportSerializer, CreateDemandReportSerializer
-from rest_framework.response import Response
 
 
 class DemandReportCreateAPI(generics.CreateAPIView):
@@ -24,3 +25,13 @@ class DemandReportListAPI(generics.ListAPIView):
         demand_report = self.queryset.filter(
             date__gt=start_date, date__lt=end_date)
         return demand_report
+
+
+class DemandReportDeleteAPI(APIView):
+    queryset = DemandReport.objects.all()
+
+    def delete(self, request, *args, **kwargs):
+        delete_date = self.request.query_params['date']
+        demand_report = self.queryset.filter(date=delete_date)
+        demand_report.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
