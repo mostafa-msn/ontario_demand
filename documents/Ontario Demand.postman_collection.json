@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "131a021f-3624-4022-a581-076d62982597",
+		"name": "Ontario Demand",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"demand\": [\n        {\n            \"date\": \"2022-10-16\",\n            \"hour\": 3,\n            \"market_demand\": 1113,\n            \"ontario_demand\": 3001\n        },\n        {\n            \"date\": \"2022-10-16\",\n            \"hour\": 4,\n            \"market_demand\": 1114,\n            \"ontario_demand\": 2001\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/demand/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"demand",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"demand\": [\n        {\n            \"date\": \"2022-10-16\",\n            \"hour\": 3,\n            \"market_demand\": 1113,\n            \"ontario_demand\": 3001\n        },\n        {\n            \"date\": \"2022-10-16\",\n            \"hour\": 4,\n            \"market_demand\": 1114,\n            \"ontario_demand\": 2001\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/demand/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"demand",
+								"create"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/demand?start=2022-10-15&end=2022-10-17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"demand"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2022-10-15"
+						},
+						{
+							"key": "end",
+							"value": "2022-10-17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/demand/delete?date=2022-10-16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"demand",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2022-10-16"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
